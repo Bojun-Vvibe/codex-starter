@@ -3,187 +3,146 @@
     <style>
       text { font-family: 'JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', monospace; font-size: 12px; }
       .bg { fill: #141414; }
+      .panel { fill: #1d1f24; }
       .fg { fill: #e7dccf; }
-      .blue { fill: #ff7a1a; }
-      .purple { fill: #ffd166; }
-      .cyan { fill: #5ad1e6; }
-      .green { fill: #a3e635; }
-      .orange { fill: #ffb347; }
-      .teal { fill: #5bd1b9; }
       .muted { fill: #8a8178; }
       .border { fill: #3a3f46; }
+      .orange { fill: #ff7a1a; }
+      .gold { fill: #ffd166; }
+      .cyan { fill: #5ad1e6; }
+      .green { fill: #a3e635; }
+      .amber { fill: #ffb347; }
+      .red { fill: #ff5d73; }
+      .teal { fill: #5bd1b9; }
+      .orange2 { fill: #ff8f3f; }
       .bold { font-weight: bold; }
     </style>
   </defs>
 
-  <!-- Window chrome -->
-  <rect width="920" height="520" rx="10" class="bg"/>
-  <rect x="0" y="0" width="920" height="30" rx="10" fill="#1d1f24"/>
-  <rect x="0" y="20" width="920" height="10" fill="#1d1f24"/>
+  <rect width="920" height="520" rx="12" class="bg"/>
+  <rect x="0" y="0" width="920" height="30" rx="12" class="panel"/>
+  <rect x="0" y="20" width="920" height="10" class="panel"/>
   <circle cx="20" cy="15" r="6" fill="#ff5d73"/>
   <circle cx="40" cy="15" r="6" fill="#ffb347"/>
   <circle cx="60" cy="15" r="6" fill="#a3e635"/>
   <text x="460" y="19" text-anchor="middle" class="muted" font-size="11">Codex Starter</text>
 
-  <!-- Header -->
-  <text x="15" y="55" class="blue bold">🚀 Codex Starter</text>
-  <text x="195" y="55" class="border">│</text>
-  <text x="210" y="55" class="green">142</text>
-  <text x="235" y="55" class="muted">/142 sessions</text>
-  <text x="345" y="55" class="border">│</text>
-  <text x="360" y="55" class="purple">5</text>
-  <text x="373" y="55" class="muted">projects</text>
-  <text x="440" y="55" class="border">│</text>
-  <text x="455" y="55" class="teal">↕time</text>
+  <text x="15" y="55" class="orange bold">Codex Starter</text>
+  <text x="130" y="55" class="border">│</text>
+  <text x="145" y="55" class="green">17</text>
+  <text x="160" y="55" class="muted">/17 sessions</text>
+  <text x="255" y="55" class="border">│</text>
+  <text x="270" y="55" class="gold">5</text>
+  <text x="282" y="55" class="muted">projects</text>
+  <text x="350" y="55" class="border">│</text>
+  <text x="365" y="55" class="teal">[time]</text>
+  <text x="430" y="55" class="border">│</text>
+  <text x="445" y="55" class="red">[Full Auto]</text>
 
   <line x1="0" y1="65" x2="920" y2="65" stroke="#3a3f46" stroke-width="1"/>
-  <line x1="460" y1="65" x2="460" y2="484" stroke="#3a3f46" stroke-width="1"/>
+  <line x1="460" y1="75" x2="460" y2="484" stroke="#3a3f46" stroke-width="1"/>
 
-  <!-- LEFT PANEL -->
-  <text x="15" y="85" class="green bold">✨ New Conversation</text>
+  <text x="15" y="92" class="green bold">+ New Conversation</text>
 
-  <text x="15" y="110" class="blue">web-app</text>
-  <text x="120" y="110" class="orange">Today 14:32</text>
-  <text x="250" y="110" class="blue">384</text>
-  <text x="278" y="110" class="muted">m</text>
-  <text x="295" y="110" class="fg">实现 LRU Cache</text>
+  <rect x="2" y="102" width="456" height="20" rx="2" fill="#8a3b12"/>
+  <text x="10" y="116" fill="#ffd166" class="bold">~/work/acme</text>
+  <text x="120" y="116" fill="#ffb347">Today 14:32</text>
+  <text x="255" y="116" fill="#5ad1e6" class="bold">starter-shell</text>
 
-  <text x="15" y="135" class="blue">web-app</text>
-  <text x="120" y="135" class="orange">Today 11:05</text>
-  <text x="250" y="135" class="blue">127</text>
-  <text x="278" y="135" class="muted">m</text>
-  <text x="295" y="135" class="fg">Fix login redirect</text>
+  <text x="10" y="138" class="cyan">~/work/apex</text>
+  <text x="120" y="138" class="amber">Today 13:08</text>
+  <text x="255" y="138" class="fg">Add project filter</text>
 
-  <text x="15" y="160" class="purple">my-saas-api</text>
-  <text x="120" y="160" class="orange">Today 09:48</text>
-  <text x="250" y="160" class="blue"> 72</text>
-  <text x="278" y="160" class="muted">m</text>
-  <text x="295" y="160" class="fg">Add rate limiting</text>
+  <text x="10" y="160" class="cyan">~/work/apex</text>
+  <text x="120" y="160" class="amber">Today 13:05</text>
+  <text x="255" y="160" class="teal bold">Ship iOS build lane</text>
 
-  <text x="15" y="185" class="cyan">dotfiles</text>
-  <text x="120" y="185" class="orange">Yesterday</text>
-  <text x="250" y="185" class="blue"> 89</text>
-  <text x="278" y="185" class="muted">m</text>
-  <text x="295" y="185" class="fg">配置 zsh alias</text>
+  <text x="10" y="182" class="cyan">~/work/apex</text>
+  <text x="120" y="182" class="amber">Today 13:04</text>
+  <text x="255" y="182" class="fg">Fix flaky e2e</text>
 
-  <text x="15" y="210" class="green">ml-pipeline</text>
-  <text x="120" y="210" class="orange">Yesterday</text>
-  <text x="250" y="210" class="blue">215</text>
-  <text x="278" y="210" class="muted">m</text>
-  <text x="295" y="210" class="fg">Debug data loader</text>
+  <text x="10" y="204" class="cyan">~/work/nova</text>
+  <text x="120" y="204" class="amber">Today 11:16</text>
+  <text x="255" y="204" class="fg">Draft release notes</text>
 
-  <!-- Selected row -->
-  <rect x="2" y="223" width="456" height="22" rx="2" fill="#8a3b12"/>
-  <text x="10" y="238" fill="white" class="bold">▸</text>
-  <text x="25" y="238" fill="#ffd166" class="bold">my-saas-api</text>
-  <text x="130" y="238" fill="#ffb347">2d ago</text>
-  <text x="260" y="238" fill="#ff7a1a">165</text>
-  <text x="288" y="238" fill="#8a8178">m</text>
-  <text x="305" y="238" fill="white" class="bold">重构认证 JWT</text>
+  <text x="10" y="226" class="green">~/sandbox</text>
+  <text x="120" y="226" class="amber">Today 11:12</text>
+  <text x="255" y="226" class="fg">/resume</text>
 
-  <text x="15" y="263" class="blue">web-app</text>
-  <text x="120" y="263" class="orange">2d ago</text>
-  <text x="250" y="263" class="blue"> 31</text>
-  <text x="278" y="263" class="muted">m</text>
-  <text x="295" y="263" class="fg">Upgrade React v19</text>
+  <text x="10" y="248" class="cyan">~/work/apex</text>
+  <text x="120" y="248" class="amber">Today 10:31</text>
+  <text x="255" y="248" class="fg">Tidy auth prompts</text>
 
-  <text x="15" y="288" class="orange">infra-deploy</text>
-  <text x="120" y="288" class="orange">3d ago</text>
-  <text x="250" y="288" class="blue">443</text>
-  <text x="278" y="288" class="muted">m</text>
-  <text x="295" y="288" class="fg">迁移 OpenTofu</text>
+  <text x="10" y="270" class="green">~/lab/forge</text>
+  <text x="120" y="270" class="amber">Today 10:14</text>
+  <text x="255" y="270" class="fg">Make launcher global</text>
 
-  <text x="15" y="313" class="green">ml-pipeline</text>
-  <text x="120" y="313" class="orange">3d ago</text>
-  <text x="250" y="313" class="blue"> 54</text>
-  <text x="278" y="313" class="muted">m</text>
-  <text x="295" y="313" class="fg">Optimize inference</text>
+  <text x="10" y="292" class="cyan">~/work/apex</text>
+  <text x="120" y="292" class="amber">Today 10:12</text>
+  <text x="255" y="292" class="fg">Patch session picker</text>
 
-  <text x="15" y="338" class="purple">my-saas-api</text>
-  <text x="120" y="338" class="orange">4d ago</text>
-  <text x="250" y="338" class="blue">198</text>
-  <text x="278" y="338" class="muted">m</text>
-  <text x="295" y="338" class="fg">Stripe webhook</text>
+  <text x="10" y="314" class="green">~/sandbox</text>
+  <text x="120" y="314" class="amber">Today 10:12</text>
+  <text x="255" y="314" class="fg">Hello world check</text>
 
-  <text x="15" y="363" class="cyan">dotfiles</text>
-  <text x="120" y="363" class="orange">5d ago</text>
-  <text x="250" y="363" class="blue"> 15</text>
-  <text x="278" y="363" class="muted">m</text>
-  <text x="295" y="363" class="fg">tmux + neovim</text>
+  <text x="10" y="336" class="green">~/lab/forge</text>
+  <text x="120" y="336" class="amber">Today 09:46</text>
+  <text x="255" y="336" class="fg">Refine onboarding copy</text>
 
-  <text x="15" y="388" class="blue">web-app</text>
-  <text x="120" y="388" class="orange">5d ago</text>
-  <text x="250" y="388" class="blue">117</text>
-  <text x="278" y="388" class="muted">m</text>
-  <text x="295" y="388" class="fg">暗黑模式切换</text>
+  <text x="10" y="358" class="green">~/lab/forge</text>
+  <text x="120" y="358" class="amber">Today 09:44</text>
+  <text x="255" y="358" class="fg">Map resume flows</text>
 
-  <text x="15" y="413" class="orange">infra-deploy</text>
-  <text x="120" y="413" class="orange">6d ago</text>
-  <text x="250" y="413" class="blue"> 88</text>
-  <text x="278" y="413" class="muted">m</text>
-  <text x="295" y="413" class="fg">Fix CI timeout</text>
+  <text x="475" y="92" class="orange bold">█ acme-platform</text>
+  <text x="475" y="110" class="cyan bold">starter-shell</text>
+  <line x1="475" y1="120" x2="890" y2="120" stroke="#3a3f46" stroke-width="1"/>
 
-  <!-- RIGHT PANEL -->
-  <text x="475" y="85" class="purple bold">█ my-saas-api</text>
-  <line x1="475" y1="93" x2="890" y2="93" stroke="#3a3f46" stroke-width="1"/>
+  <text x="475" y="145" class="muted">Session</text>
+  <text x="575" y="145" class="cyan">01ab23cd-45ef-67ab-89cd-ef0123456789</text>
+  <text x="475" y="163" class="muted">Started</text>
+  <text x="575" y="163" class="amber">4/13/2026, 2:07:18 PM</text>
+  <text x="475" y="181" class="muted">Last active</text>
+  <text x="575" y="181" class="amber">4/13/2026, 4:45:02 PM</text>
+  <text x="475" y="199" class="muted">Duration</text>
+  <text x="575" y="199" class="green">2h 38m</text>
+  <text x="475" y="217" class="muted">Messages</text>
+  <text x="575" y="217" class="orange">184</text>
+  <text x="475" y="235" class="muted">Size</text>
+  <text x="575" y="235" class="gold">2.4M</text>
+  <text x="475" y="253" class="muted">Codex</text>
+  <text x="575" y="253" class="muted">v0.120.0</text>
+  <text x="475" y="271" class="muted">Directory</text>
+  <text x="575" y="271" class="muted">/workspace/acme-platform</text>
+  <text x="475" y="289" class="muted">Provider</text>
+  <text x="575" y="289" class="teal">openai</text>
+  <text x="475" y="307" class="muted">Mode</text>
+  <text x="575" y="307" class="muted">cli</text>
+  <text x="475" y="325" class="muted">Resume with</text>
+  <text x="575" y="325" class="red">Full Auto</text>
 
-  <text x="475" y="115" class="muted">Session</text>
-  <text x="575" y="115" class="cyan">a1b2c3d4-e5f6...</text>
-  <text x="475" y="135" class="muted">Started</text>
-  <text x="575" y="135" class="orange">4/1/2026, 3:44 PM</text>
-  <text x="475" y="155" class="muted">Last active</text>
-  <text x="575" y="155" class="orange">4/1/2026, 5:21 PM</text>
-  <text x="475" y="175" class="muted">Duration</text>
-  <text x="575" y="175" class="green">1h 37m</text>
-  <text x="475" y="195" class="muted">Messages</text>
-  <text x="575" y="195" class="blue">165</text>
-  <text x="475" y="215" class="muted">Branch</text>
-  <text x="575" y="215" class="teal">⎇ feat/auth-refactor</text>
-  <text x="475" y="235" class="muted">Directory</text>
-  <text x="575" y="235" class="muted">~/dev/my-saas-api</text>
+  <text x="475" y="354" class="cyan bold">Tools Used</text>
+  <text x="475" y="372" class="cyan">exec_command, apply_patch, repo_search</text>
 
-  <text x="475" y="265" class="cyan bold">Tools Used</text>
-  <text x="475" y="285" class="border">[</text><text x="483" y="285" class="cyan">Bash</text><text x="515" y="285" class="border">]</text>
-  <text x="525" y="285" class="border">[</text><text x="533" y="285" class="cyan">Read</text><text x="565" y="285" class="border">]</text>
-  <text x="575" y="285" class="border">[</text><text x="583" y="285" class="cyan">Edit</text><text x="615" y="285" class="border">]</text>
-  <text x="625" y="285" class="border">[</text><text x="633" y="285" class="cyan">Write</text><text x="673" y="285" class="border">]</text>
-  <text x="683" y="285" class="border">[</text><text x="691" y="285" class="cyan">Glob</text><text x="723" y="285" class="border">]</text>
+  <text x="475" y="401" class="gold bold">Conversation</text>
+  <line x1="475" y1="410" x2="890" y2="410" stroke="#3a3f46" stroke-width="1"/>
 
-  <text x="475" y="315" class="purple bold">💬 Conversation</text>
-  <line x1="475" y1="323" x2="890" y2="323" stroke="#3a3f46" stroke-width="1"/>
+  <text x="475" y="432" class="orange bold">You &gt;</text>
+  <text x="530" y="432" class="fg">Build a terminal homepage for resuming sessions</text>
+  <text x="475" y="450" class="green">Codex &gt;</text>
+  <text x="540" y="450" class="muted">I’ll mirror the fast resume workflow, then add project filters,</text>
+  <text x="540" y="466" class="muted">mode switching, and a readable session detail panel.</text>
 
-  <text x="475" y="345" class="blue bold">You ❯</text>
-  <text x="530" y="345" class="fg">重构认证模块，换成 JWT</text>
-  <text x="475" y="363" class="green">Codex ❯</text>
-  <text x="550" y="363" class="muted">I'll refactor the auth</text>
-  <text x="550" y="379" class="muted">module to use JWT...</text>
-
-  <text x="475" y="405" class="blue bold">You ❯</text>
-  <text x="530" y="405" class="fg">refresh token 过期设多少</text>
-  <text x="475" y="423" class="green">Codex ❯</text>
-  <text x="550" y="423" class="muted">7-30 days is standard.</text>
-  <text x="550" y="439" class="muted">I'd recommend 14 days...</text>
-
-  <text x="475" y="465" class="blue bold">You ❯</text>
-  <text x="530" y="465" class="fg">Add tests for rotation</text>
-
-  <!-- Bottom separator -->
   <line x1="0" y1="485" x2="920" y2="485" stroke="#3a3f46" stroke-width="1"/>
 
-  <!-- Footer -->
-  <text x="15" y="507" class="blue bold">↵</text><text x="30" y="507" class="muted"> Resume</text>
-  <text x="90" y="507" class="border">│</text>
-  <text x="102" y="507" class="blue bold">n</text><text x="114" y="507" class="muted"> New</text>
-  <text x="150" y="507" class="border">│</text>
-  <text x="162" y="507" class="blue bold">/</text><text x="174" y="507" class="muted"> Search</text>
-  <text x="232" y="507" class="border">│</text>
-  <text x="244" y="507" class="blue bold">↑↓</text><text x="268" y="507" class="muted"> Nav</text>
-  <text x="305" y="507" class="border">│</text>
-  <text x="317" y="507" class="blue bold">p</text><text x="329" y="507" class="muted"> Project</text>
-  <text x="392" y="507" class="border">│</text>
-  <text x="404" y="507" class="blue bold">s</text><text x="416" y="507" class="muted"> Sort</text>
-  <text x="455" y="507" class="border">│</text>
-  <text x="467" y="507" class="blue bold">c</text><text x="479" y="507" class="muted"> Copy</text>
-  <text x="520" y="507" class="border">│</text>
-  <text x="532" y="507" class="blue bold">q</text><text x="544" y="507" class="muted"> Quit</text>
+  <text x="12" y="507" class="green bold">n</text><text x="25" y="507" class="green"> New</text>
+  <text x="68" y="507" class="orange bold">↵</text><text x="83" y="507" class="orange"> Resume</text>
+  <text x="145" y="507" class="red bold">d</text><text x="158" y="507" class="red"> Danger</text>
+  <text x="228" y="507" class="red bold">m</text><text x="241" y="507" class="red"> Mode</text>
+  <text x="295" y="507" class="amber bold">/</text><text x="308" y="507" class="amber"> Search</text>
+  <text x="377" y="507" class="cyan bold">p</text><text x="390" y="507" class="cyan"> Project</text>
+  <text x="465" y="507" class="teal bold">s</text><text x="478" y="507" class="teal"> Sort</text>
+  <text x="535" y="507" class="muted bold">c</text><text x="548" y="507" class="muted"> Copy ID</text>
+  <text x="620" y="507" class="orange2 bold">r</text><text x="633" y="507" class="orange2"> Rename</text>
+  <text x="714" y="507" class="red bold">x</text><text x="727" y="507" class="red"> Delete</text>
+  <text x="800" y="507" class="muted bold">q</text><text x="813" y="507" class="muted"> Quit</text>
 </svg>
