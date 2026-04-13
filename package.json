@@ -1,0 +1,45 @@
+{
+  "name": "codex-starter",
+  "version": "1.0.0",
+  "description": "A beautiful terminal UI for managing Codex sessions — start new or resume past conversations",
+  "main": "index.js",
+  "bin": {
+    "codex-starter": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test.js",
+    "test:tui": "node --test --test-force-exit test-tui.js",
+    "test:all": "node --test --test-force-exit test.js test-tui.js",
+    "prepublishOnly": "npm run test:all"
+  },
+  "keywords": [
+    "codex",
+    "openai-codex",
+    "tui",
+    "terminal",
+    "session",
+    "resume",
+    "ai"
+  ],
+  "author": "Bojun Chai <just_cbj@sina.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bojun-Vvibe/codex-starter.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "screenshot.svg",
+    "test.js",
+    "test-tui.js"
+  ],
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.11.0"
+  }
+}
