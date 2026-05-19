@@ -40,6 +40,17 @@ function getLaunchMode(modeId) {
   return LAUNCH_MODES.find(mode => mode.id === modeId) || LAUNCH_MODES[0];
 }
 
+function getDefaultLaunchMode(meta) {
+  return getLaunchMode(meta.defaultLaunchMode).id;
+}
+
+function setDefaultLaunchMode(meta, modeId) {
+  const normalizedModeId = getLaunchMode(modeId).id;
+  meta.defaultLaunchMode = normalizedModeId === 'default' ? undefined : normalizedModeId;
+  if (normalizedModeId === 'default') delete meta.defaultLaunchMode;
+  saveMeta(meta);
+}
+
 function buildCodexCommand({ sessionId, modeId }) {
   const mode = getLaunchMode(modeId);
   const parts = [CLI.cmd, ...mode.args];
@@ -525,7 +536,7 @@ function createApp() {
   let filterText = '';
   let isSearchMode = false;
   let sortMode = 'time';
-  let launchModeId = 'default';
+  let launchModeId = getDefaultLaunchMode(meta);
 
   const projectColorMap = new Map();
   const uniqueProjects = [...new Set(allSessions.map(s => s.project))];
@@ -862,6 +873,7 @@ function createApp() {
   function cycleLaunchMode() {
     const currentIndex = LAUNCH_MODES.findIndex(mode => mode.id === launchModeId);
     launchModeId = LAUNCH_MODES[(currentIndex + 1) % LAUNCH_MODES.length].id;
+    setDefaultLaunchMode(meta, launchModeId);
     renderAll();
   }
 
@@ -1060,6 +1072,7 @@ function createApp() {
 
     const label = CLI.name;
     const effectiveModeId = overrideModeId || launchModeId;
+    setDefaultLaunchMode(meta, effectiveModeId);
     const launchMode = getLaunchMode(effectiveModeId);
     const command = buildCodexCommand({ sessionId: session.sessionId, modeId: effectiveModeId });
 
@@ -1085,6 +1098,7 @@ function createApp() {
 
     const label = CLI.name;
     const effectiveModeId = overrideModeId || launchModeId;
+    setDefaultLaunchMode(meta, effectiveModeId);
     const launchMode = getLaunchMode(effectiveModeId);
     const command = buildCodexCommand({ modeId: effectiveModeId });
 
@@ -1424,6 +1438,8 @@ if (typeof module !== 'undefined') {
     loadMeta,
     saveMeta,
     getSessionMeta,
+    getDefaultLaunchMode,
+    setDefaultLaunchMode,
     // Constants
     LAUNCH_MODES,
     PROJECT_COLORS,
@@ -1509,8 +1525,8 @@ TUI Keyboard Shortcuts:
   ↑/↓           Navigate sessions
   Enter         Start new / resume selected session
   n             Start new session
-  m             Cycle launch mode (default/full-auto/danger)
-  d             Resume/start in dangerous mode
+  m             Cycle launch mode (default/full-auto/danger, remembered)
+  d             Resume/start in dangerous mode and remember it
   /             Search (fuzzy filter)
   p             Filter by project
   s             Cycle sort mode (time/size/messages/project)

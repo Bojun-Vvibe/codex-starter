@@ -60,8 +60,8 @@ By default it only shows interactive sessions that make sense to resume. One-sho
 
 - Warm ember-themed split-pane TUI
 - Instant search with `/`
-- Dangerous mode with `d`
-- Explicit launch mode selector with `m`
+- Dangerous mode with `d`, remembered for the next launch
+- Explicit launch mode selector with `m`, persisted locally
 - Project filter with `p`
 - Resume selected session with `Enter`
 - Rename selected session with `r`
@@ -78,9 +78,9 @@ By default it only shows interactive sessions that make sense to resume. One-sho
 | `↑` `↓` | Navigate sessions |
 | `Enter` | Start new / resume selected session |
 | `n` | New session |
-| `m` | Cycle launch mode |
+| `m` | Cycle launch mode (remembered) |
 | `/` | Search |
-| `d` | Resume or start in dangerous mode |
+| `d` | Resume or start in dangerous mode and remember it |
 | `p` | Filter by project |
 | `s` | Cycle sort mode |
 | `c` | Copy session ID |
@@ -142,8 +142,8 @@ codex-starter
 | 🔍 | **即时搜索** | `/` 开始输入，实时过滤 |
 | 📂 | **项目过滤** | `p` 按工作目录筛选 |
 | ⚡ | **一键恢复** | `Enter` 直接执行 `codex resume <id>` |
-| 🎛️ | **显式启动模式** | `m` 在 `Default` / `Full Auto` / `Danger` 之间切换，并把参数补到启动命令里 |
-| ☢️ | **危险模式** | `d` 以 `--dangerously-bypass-approvals-and-sandbox` 恢复或新建 |
+| 🎛️ | **显式启动模式** | `m` 在 `Default` / `Full Auto` / `Danger` 之间切换，并把选择保存到本地 |
+| ☢️ | **危险模式** | `d` 以 `--dangerously-bypass-approvals-and-sandbox` 恢复或新建，并记住该模式 |
 | ✏️ | **重命名** | `r` 给会话起一个更容易记住的标题 |
 | 🗑️ | **删除会话** | `x` / `Delete` 删除本地 JSONL 会话 |
 | 📋 | **详情预览** | 显示目录、模式、消息、工具调用 |

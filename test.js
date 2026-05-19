@@ -24,6 +24,8 @@ const {
   loadMeta,
   saveMeta,
   getSessionMeta,
+  getDefaultLaunchMode,
+  setDefaultLaunchMode,
   getLaunchMode,
   buildCodexCommand,
   detectCLI,
@@ -90,6 +92,25 @@ describe('helpers', () => {
     const meta = loadMeta();
     assert.equal(getSessionMeta(meta, 'abc').customTitle, 'Pinned');
     assert.deepEqual(getSessionMeta(meta, 'missing'), {});
+  });
+
+  it('loads and persists the default launch mode', () => {
+    const meta = { sessions: {} };
+
+    assert.equal(getDefaultLaunchMode(meta), 'default');
+
+    setDefaultLaunchMode(meta, 'danger');
+    assert.equal(meta.defaultLaunchMode, 'danger');
+    assert.equal(loadMeta().defaultLaunchMode, 'danger');
+    assert.equal(getDefaultLaunchMode(loadMeta()), 'danger');
+
+    setDefaultLaunchMode(meta, 'default');
+    assert.equal(meta.defaultLaunchMode, undefined);
+    assert.equal(getDefaultLaunchMode(loadMeta()), 'default');
+  });
+
+  it('falls back to default launch mode for invalid meta values', () => {
+    assert.equal(getDefaultLaunchMode({ sessions: {}, defaultLaunchMode: 'missing' }), 'default');
   });
 
   it('detects codex CLI name', () => {

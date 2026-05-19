@@ -209,6 +209,7 @@ describe('codex starter tui', () => {
     triggerScreenKey('m');
     assert.ok(widgets.header.getContent().includes('[Full Auto]'));
     assert.ok(widgets.detail.getContent().includes('codex --full-auto'));
+    assert.equal(mod.loadMeta().defaultLaunchMode, 'full-auto');
   });
 
   it('resumes selected session with codex resume', () => {
@@ -228,5 +229,6 @@ describe('codex starter tui', () => {
     triggerScreenKey('d');
     const lastCall = spawnCalls.at(-1);
     assert.ok(lastCall.args.at(-1).includes('codex --dangerously-bypass-approvals-and-sandbox'));
+    assert.equal(mod.loadMeta().defaultLaunchMode, 'danger');
   });
 });
