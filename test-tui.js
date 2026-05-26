@@ -43,6 +43,11 @@ writeSession('rollout-a.jsonl', [
     type: 'event_msg',
     payload: { type: 'agent_message', message: 'On it.' },
   },
+  ...Array.from({ length: 20 }, (_, index) => ({
+    timestamp: `2026-04-13T02:48:${String(index).padStart(2, '0')}.000Z`,
+    type: 'event_msg',
+    payload: { type: 'user_message', message: `extra prompt ${String(index + 1).padStart(2, '0')}` },
+  })),
 ]);
 
 writeSession('rollout-b.jsonl', [
@@ -189,6 +194,14 @@ describe('codex starter tui', () => {
     assert.match(widgets.header.getContent(), /Codex Starter/);
     assert.ok(widgets.list.items.some(item => item.includes('build project filter UI')));
     assert.ok(!widgets.list.items.some(item => item.includes('investigate failing tests')));
+  });
+
+  it('expands the conversation preview for taller detail panes', () => {
+    triggerScreenKey('escape');
+    widgets.detail.height = 80;
+    triggerScreenKey('home');
+    triggerScreenKey('down');
+    assert.match(widgets.detail.getContent(), /extra prompt 11/);
   });
 
   it('supports search via slash mode', () => {

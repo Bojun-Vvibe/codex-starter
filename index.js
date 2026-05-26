@@ -795,7 +795,9 @@ function createApp() {
     c += `\n {#ffd166-fg}{bold}Conversation{/}\n`;
     c += sep + '\n';
 
-    const msgs = (session.userMessages || []).slice(0, 10);
+    const detailHeight = detailPanel.height || screen.height || 24;
+    const previewLimit = Math.max(10, Math.floor(Math.max(0, detailHeight - 18) / 3));
+    const msgs = (session.userMessages || []).slice(0, previewLimit);
     const assists = (session.assistantSnippets || []);
 
     if (msgs.length === 0) {
